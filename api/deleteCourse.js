@@ -38,3 +38,6 @@ router.post("/", (req, res) => {
           });
     }
 });
+
+module.exports = router;
+
