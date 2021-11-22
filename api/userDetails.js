@@ -6,6 +6,7 @@ const Master = require("./../models/master");
 const Course = require("./../models/course");
 
 router.post("/viewProfile", (req, res) => {
+    console.log("In code");
     let {email} = req.body;
     email = email;
     if (email == "") {
@@ -30,6 +31,35 @@ router.post("/viewProfile", (req, res) => {
             .status(400)
             .send(error));
     }
+});
+
+router.post("/viewCourses", (req, res) => {
+    let {email} = req.body;
+    email = email;
+    if (email == "") {
+        res.json({
+          status: "FAILED",
+          message: "Empty input fields!",
+        });
+  
+    }
+    else {
+        User.find({email})
+        .then((result) => {
+            var courses =  result[0].courses_enrolled;
+            console.log(courses);
+              res.setHeader('Content-Type', 'text/json');
+            // res.status(200).send(result);
+            courses.forEach( function (eachcourse) {
+                res.write(eachcourse);
+            });
+            res.end();
+        })
+        .catch(error => res
+            .status(400)
+            .send(error));
+    }
+
 });
 
 module.exports = router;

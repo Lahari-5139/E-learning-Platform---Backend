@@ -9,6 +9,8 @@ router.post("/", (req, res) => {
     let {userEmail, masterEmail} = req.body; //name is the course name
     userEmail = userEmail;
     masterEmail = masterEmail;
+    console.log(userEmail);
+      console.log(masterEmail);
     // description = description;
     if (userEmail == "" || masterEmail == "") {
         res.json({
@@ -23,14 +25,20 @@ router.post("/", (req, res) => {
     //     });
     // }
     else {
-        User.find({userEmail})
+      let email = userEmail;
+        User.find({email})
         .then((resultuser) => {
-            Master.find({masterEmail})
+          let email =  masterEmail;
+            Master.find({email})
             .then((resultmaster) => {
+              console.log(userEmail);
+      console.log(masterEmail);
+      console.log(resultuser);
+      console.log(resultmaster);
                 let checkflag = false;
                 resultuser[0].masters_followed.forEach( function (eachmaster) {
-                    console.log(eachmaster);
-                    console.log(resultmaster[0]._id);
+                    // console.log(eachmaster);
+                    // console.log(resultmaster[0]._id);
                     if(eachmaster.toString() == resultmaster[0]._id.toString()) {
                         checkflag = true;
                         console.log("Yess!");
