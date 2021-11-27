@@ -71,10 +71,12 @@ router.post("/", (req, res) => {
                       result1[0].save();
                       console.log(result1);
                       res.json({
-                                status: "SUCCESS",
-                                message: "course added successfully",
-                                data: result,
-                              }); 
+                        status: "SUCCESS",
+                        message: "course added successfully",
+                        data: result,
+                      }); 
+                      const message = `Course ${result[0].name} created!`;
+                      result1[0].notifications.push(message);
                   }
                 }) 
         })

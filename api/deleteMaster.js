@@ -26,8 +26,10 @@ router.post("/", (req, res) => {
             // })
             res.json({
                 status: "SUCCESS",
-                message: "User deleted successfully",
+                message: "Master deleted successfully",
             });
+            const message = `Master ${email} deleted!`;
+            result[0].notifications.push(message);
         })
         .catch((err) => {
             console.log(err);

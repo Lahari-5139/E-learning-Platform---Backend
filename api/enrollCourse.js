@@ -48,6 +48,8 @@ router.post("/", (req, res) => {
                     status: "SUCCESS",
                     message: "course enrolled successfully",
                   });
+                  const message = `Course ${resultcourse[0].name} Enrolled!`;
+                resultuser[0].notifications.push(message);
                 }
             })
             .catch((err) => {

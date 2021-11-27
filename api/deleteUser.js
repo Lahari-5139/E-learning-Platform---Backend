@@ -28,6 +28,8 @@ router.post("/", (req, res) => {
                 status: "SUCCESS",
                 message: "User deleted successfully",
             });
+            const message = `User ${email} deleted!`;
+            result[0].notifications.push(message);
         })
         .catch((err) => {
             console.log(err);

@@ -56,6 +56,10 @@ router.post("/", (req, res) => {
                     status: "SUCCESS",
                     message: "master followed successfully",
                   });
+                  const message = `Started following ${resultmaster[0].name} master!`;
+                  resultuser[0].notifications.push(message);
+                  const message2 = `${resultuser[0].name} user started following you`;
+                  resultmaster[0].notifications.push(message2);
                 }
             })
             .catch((err) => {

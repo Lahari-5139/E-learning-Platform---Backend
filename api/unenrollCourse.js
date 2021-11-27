@@ -40,6 +40,8 @@ router.post("/", (req, res) => {
                             status: "SUCCESS",
                             message: "course unenrolled successfully",
                         });
+                        const message = `Course ${resultcourse[0].name} unenrolled!`;
+                        resultuser[0].notifications.push(message);
                     }
                 })
                 if( checkflag == false)

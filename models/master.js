@@ -9,6 +9,7 @@ const MasterSchema = new Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     courses: [{type: ObjectId, ref: Course}],
+    notifications: [{type: String}],
     // resetPasswordToken: String,
     // resetPasswordExpires: Date,
     // dateOfBirth: Date,

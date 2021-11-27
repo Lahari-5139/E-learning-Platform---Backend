@@ -28,6 +28,8 @@ router.post("/", (req, res) => {
                 status: "SUCCESS",
                 message: "course deleted successfully",
             });
+            const message = `Course ${name} deleted!`;
+            result[0].notifications.push(message);
         })
         .catch((err) => {
             console.log(err);

@@ -5,7 +5,7 @@ const User = require("./../models/user");
 const Master = require("./../models/master");
 const Course = require("./../models/course");
 
-router.post("/viewProfile", (req, res) => {
+router.get("/viewProfile", (req, res) => {
     console.log("In code");
     let {email} = req.body;
     email = email;
@@ -33,7 +33,7 @@ router.post("/viewProfile", (req, res) => {
     }
 });
 
-router.post("/viewCourses", (req, res) => {
+router.get("/viewCourses", (req, res) => {
     let {email} = req.body;
     email = email;
     if (email == "") {

@@ -12,6 +12,7 @@ const UserSchema = new Schema({
     courses_enrolled: [{type: ObjectId, ref: Course}],
     masters_followed: [{type: ObjectId, ref: Master}],
     courses_fav: [{type: ObjectId, ref: Course}],
+    notifications: [{type: String}],
     // resetPasswordToken: String,
     // resetPasswordExpires: Date,
     // dateOfBirth: Date,

@@ -5,7 +5,7 @@ const User = require("./../models/user");
 const Master = require("./../models/master");
 const Course = require("./../models/course");
 
-router.post("/viewProfile", (req, res) => {
+router.get("/viewProfile", (req, res) => {
     let {email} = req.body;
     email = email;
     if (email == "") {

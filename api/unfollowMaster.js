@@ -48,6 +48,8 @@ router.post("/", (req, res) => {
                             status: "SUCCESS",
                             message: "master unfollowed successfully",
                         });
+                        const message = `Unfollowed ${resultmaster[0].name} master!`;
+                        resultuser[0].notifications.push(message);
                 }
                 })
                 if( checkflag == false)

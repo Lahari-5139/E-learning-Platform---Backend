@@ -19,6 +19,7 @@ const DeleteMasterRouter = require('./api/deleteMaster');
 const DeleteUserRouter = require('./api/deleteUser');
 const UnenrollCourseRouter = require('./api/unenrollCourse');
 const UnfollowMasterRouter = require('./api/unfollowMaster');
+const SearchRouter = require('./api/search');
 
 // for accepting post form data
 const bodyParser = require('express').json;
@@ -41,6 +42,7 @@ app.use("/deleteMaster", DeleteMasterRouter);
 app.use("/deleteUser", DeleteUserRouter);
 app.use("/unenrollCourse", UnenrollCourseRouter);
 app.use("/unfollowMaster", UnfollowMasterRouter);
+app.use("/search", SearchRouter);
 
 
 app.listen(port, ()=> {
