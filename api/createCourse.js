@@ -35,25 +35,6 @@ router.post("/", (req, res) => {
                     description,
                 });
                 console.log(`course is ${newCourse}`);
-                // newCourse
-                //   .save()
-                //   .then((result) => {
-                //     console.log(`result course is ${result}`);
-                //     res.json({
-                //         status: "SUCCESS",
-                //         message: "course added successful",
-                //         data: result,
-                //       }); 
-                //     // $pushresult1[0].courses: course;
-                //     Master.updateOne( { email : email },{ $push: { courses: result[0]._id } });
-                //     // result1[0].save(); 
-                //   })
-                //   .catch((err) => {
-                //     res.json({
-                //       status: "FAILED",
-                //       message: "An error occurred while saving course!",
-                //     });
-                //   }); 
                 newCourse.save(function(err,result){
                   if (err){
                       console.log(err);

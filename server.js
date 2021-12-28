@@ -94,11 +94,12 @@ const DeleteUserRouter = require('./api/deleteUser');
 const UnenrollCourseRouter = require('./api/unenrollCourse');
 const UnfollowMasterRouter = require('./api/unfollowMaster');
 const SearchRouter = require('./api/search');
+const GetCoursesRouter = require('./api/getcourses');
 
 // for accepting post form data
 const bodyParser = require('express').json;
 app.use(bodyParser());
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(cookieParser()); 
 
 // app.use('/user', UserRouter)
@@ -119,6 +120,7 @@ app.use("/deleteUser", DeleteUserRouter);
 app.use("/unenrollCourse", UnenrollCourseRouter);
 app.use("/unfollowMaster", UnfollowMasterRouter);
 app.use("/search", SearchRouter);
+app.use("/getCourses", GetCoursesRouter);
 
 
 app.listen(port, ()=> {
